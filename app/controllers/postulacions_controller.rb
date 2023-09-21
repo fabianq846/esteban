@@ -22,6 +22,7 @@ class PostulacionsController < ApplicationController
   # POST /postulacions or /postulacions.json
   def create
     @postulacion = Postulacion.new(postulacion_params)
+    NotificationMailer.postulation_notification(current_user, @oferta_laboral).deliver_now
 
     respond_to do |format|
       if @postulacion.save

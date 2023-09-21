@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   # config/routes.rb
 
 devise_for :users, skip: :registrations
