@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Oferta laborals</h1>
+
+<div id="oferta_laborals">
+  <% @oferta_laborals.each do |oferta_laboral| %>
+    <%= render oferta_laboral %>
+    <p>
+      <%= link_to "Show this oferta laboral", oferta_laboral %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New oferta laboral", new_oferta_laboral_path %>

@@ -1,0 +1,27 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Nombre:</strong>
+    <%= user.nombre %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= user.email %>
+  </p>
+
+  <p>
+    <strong>Password digest:</strong>
+    <%= user.password_digest %>
+  </p>
+
+  <p>
+    <strong>Foto:</strong>
+    <%= link_to user.foto.filename, user.foto if user.foto.attached? %>
+  </p>
+
+  <p>
+    <strong>Bio:</strong>
+    <%= user.bio %>
+  </p>
+
+</div>

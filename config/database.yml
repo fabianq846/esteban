@@ -1,0 +1,26 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: esteban_development
+
+  username: userdba
+  password: ror2023
+  host: localhost
+  port: 5432
+
+test:
+  <<: *default
+  database: esteban_test
+
+production:
+  <<: *default
+  database: esteban_production
+  username: esteban
+  password: <%= ENV["ESTEBAN_DATABASE_PASSWORD"] %>
