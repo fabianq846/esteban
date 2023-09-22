@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  # config/routes.rb
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+  
+  authenticated :user, lambda {|u| u.admin? } do
+    resources :users
+    resources :oferta_laborals do
+      resources :postulacions, only: [:create]
+    end
+  end
 
-devise_for :users, skip: :registrations
-
-  resources :postulacions
-  resources :oferta_laborals
-  resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :oferta_laborals, only: [:index, :show] do
+    resources :postulacions, only: [:create]
+  end
+  
+  resources :postulacions, only: [:index, :show]
+  
+  root 'home#index'
 end

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :postulaciones
   has_many :ofertas_laborales, through: :postulaciones
   
+  has_one_attached :profile_picture
 
 
 end

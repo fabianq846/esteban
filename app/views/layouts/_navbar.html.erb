@@ -1,3 +1,5 @@
+<!-- app/views/layouts/_navbar.html.erb -->
+
 <nav>
   <% if user_signed_in? %>
     <span>Bienvenido, <%= current_user.nombre %></span>
@@ -6,7 +8,7 @@
       <%= link_to 'Crear Usuario', new_user_registration_path %>
       <%= link_to 'Crear Oferta Laboral', new_oferta_laboral_path %>
       <%= link_to 'Lista de Usuarios', users_path %>
-      <%= link_to 'Lista de Ofertas', ofertas_laborales_path %>
+    <%= link_to 'Lista de Ofertas', oferta_laborals_path %>
     <% else %>
       <%= link_to 'Mis Postulaciones', user_postulaciones_path(current_user) %>
       <%= link_to 'Ofertas Laborales', ofertas_laborales_path %>

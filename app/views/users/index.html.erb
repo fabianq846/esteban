@@ -4,7 +4,12 @@
 
 <div id="users">
   <% @users.each do |user| %>
+    <% if user.profile_picture.attached? %>
+      <%= image_tag user.profile_picture %>
+    <% end %>
+
     <%= render user %>
+    
     <p>
       <%= link_to "Show this user", user %>
     </p>
