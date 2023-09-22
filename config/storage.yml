@@ -8,10 +8,10 @@ local:
 
 amazon:
   service: S3
-  access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
-  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
-  region: 'us-west-1' # cambia esto a tu región
-  bucket: <%= ENV['AWS_BUCKET'] %>
+  access_key_id: <%= ENV['AKIA32UC3DU6FYEWI372'] %>
+  secret_access_key: <%= ENV['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'] %>
+  region: 'us-east-1' # cambia esto a tu región
+  bucket: <%= ENV['ror2023-publico'] %>
 
 
 # Remember not to checkin your GCS keyfile to a repository
