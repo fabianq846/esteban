@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   }
   
   authenticated :user, lambda {|u| u.admin? } do
-    resources :users
-    resources :oferta_laborals do
+    resources :users do
+      member do
+        get 'postulaciones'
+      end
+    end
+        resources :oferta_laborals do
       resources :postulacions, only: [:create]
     end
   end

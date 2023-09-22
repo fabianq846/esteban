@@ -2,6 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :restrict_access, only: [:new, :create]
+  skip_before_action :require_no_authentication, only: [:new, :create]
 
   private
 
